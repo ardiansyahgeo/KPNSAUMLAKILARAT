@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+			<title>SAUMLAKI LARAT</title>
+        <link rel="stylesheet" href="./resources/ol.css">
+        <link rel="stylesheet" href="resources/fontawesome-all.min.css">
+        <link rel="stylesheet" href="./resources/ol-layerswitcher.css">
+        <link rel="stylesheet" href="./resources/qgis2web.css">
+		<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.navbar a {
+  float: left;
+  font-size: 12px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 12px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+</style>
+</head>
+<body style="background-color:white;">
+
+<div class="navbar">
+  <a class="active" href="https://ardiansyahgeo.github.io/KPNSAUMLAKILARAT/">RDTR SAUMLAKI&LARAT</a>
+  <a href=https://lookerstudio.google.com/reporting/db57e3d3-b42a-45df-bd3f-a328135adafa/page/2sIaD>BASISDATA</a>
+    <div class="dropdown">
+   <button class="dropbtn">3D VIEW
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="indexlarat.html">PINTU GERBANG LARAT</a>
+      <a href="indexsaumlaki.html">PPPU SAUMLAKI</a>
+	  <a href="indexyamdena.html">PULAU YAMDENA</a>
+     </div>
+  </div> 
+    <div class="dropdown">
+    <button class="dropbtn">SURVEI 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="https://kf.kobotoolbox.org/#/forms/aTJcXr9B69x5hwn5wvFBjN/data/map">SURVEI UTILITAS</a>
+      <a href="https://ardiansyahgeo.github.io/surveyrdtrkpnsaumlakilarat/">SURVEY TOPONIMI</a>
+     </div>
+  </div> 
+  
+  
+  <div class="dropdown">
+    <button class="dropbtn">MASUKAN (KONSULTASI PUBLIK)
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="https://tataruang.atrbpn.go.id/kpo/Lokasi/InformasiUmum/676fa585-9da2-47a4-9742-ff083fc798cb/rdtr-kpn-pusat-pelayanan-pintu-gerbang-larat">PINTU GERBANG LARAT</a>
+      <a href="https://tataruang.atrbpn.go.id/kpo/Lokasi/InformasiUmum/cbcbb278-c848-4dda-8903-40f659cff84a/rdtr-kpn-pusat-pelayanan-utama-saumlaki">PKSN SAUMLAKI</a>
+     </div>
+  </div> 
+</div>
+<style>
+.search-layer {
+  top: 135px;
+  left: .5em;
+}
+.ol-touch .search-layer {
+  top: 180px;
+}
+#form_measure {
+  background-color: rgba(255, 255, 255, 0.75);
+  border: 3px solid #f8f8f8 !important;
+  z-index: 1;
+  opacity: 1;
+  position: absolute;
+  top: 65px;
+  left: 2.7em;
+  margin: 0;
+  width: 147px;
+  height: 19px;
+      }
+
+</style>
+        <style>
+        html, body {
+            background-color: #ffffff;
+        }
+        .ol-control button {
+            background-color: #f8f8f8 !important;
+            color: #000000 !important;
+            border-radius: 0px !important;
+        }
+        .ol-zoom, .geolocate, .gcd-gl-control .ol-control {
+            background-color: rgba(255,255,255,.4) !important;
+            padding: 3px !important;
+        }
+        .ol-scale-line {
+            background: none !important;
+        }
+        .ol-scale-line-inner {
+            border: 2px solid #f8f8f8 !important;
+            border-top: none !important;
+            background: rgba(255, 255, 255, 0.5) !important;
+            color: black !important;
+        }
+        </style>
+
+        <style>
+        .geolocate {
+            top: 65px;
+            left: .5em;
+        }
+        .ol-touch .geolocate {
+            top: 80px;
+        }
+        </style>
+<style>
+.tooltip {
+  position: relative;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+  color: white;
+  padding: 4px 8px;
+  opacity: 0.7;
+  white-space: nowrap;
+}
+.tooltip-measure {
+  opacity: 1;
+  font-weight: bold;
+}
+.tooltip-static {
+  background-color: #ffcc33;
+  color: black;
+  border: 1px solid white;
+}
+.tooltip-measure:before,
+.tooltip-static:before {
+  border-top: 6px solid rgba(0, 0, 0, 0.5);
+  border-right: 6px solid transparent;
+  border-left: 6px solid transparent;
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  margin-left: -7px;
+  left: 50%;
+}
+.tooltip-static:before {
+  border-top-color: #ffcc33;
+}
+.measure-control {
+  top: 100px;
+  left: .5em;
+}
+.ol-touch .measure-control {
+  top: 130px;
+}
+</style>
+<style>
+.search-layer {
+  top: 135px;
+  left: .5em;
+}
+.ol-touch .search-layer {
+  top: 180px;
+}
+
+#form_measure {
+  background-color: rgba(255, 255, 255, 0.75);
+  border: 3px solid #f8f8f8 !important;
+  z-index: 1;
+  opacity: 1;
+  position: absolute;
+  top: 65px;
+  left: 2.7em;
+  margin: 0;
+  width: 147px;
+  height: 19px;
+      }
+
+</style>
+        <style>
+        html, body {
+            background-color: #ffffff;
+        }
+        .ol-control button {
+            background-color: #f8f8f8 !important;
+            color: #000000 !important;
+            border-radius: 0px !important;
+        }
+        .ol-zoom, .geolocate, .gcd-gl-control .ol-control {
+            background-color: rgba(255,255,255,.4) !important;
+            padding: 3px !important;
+        }
+        .ol-scale-line {
+            background: none !important;
+        }
+        .ol-scale-line-inner {
+            border: 2px solid #f8f8f8 !important;
+            border-top: none !important;
+            background: rgba(255, 255, 255, 0.5) !important;
+            color: black !important;
+        }
+        </style>
+
+        <style>
+        .geolocate {
+            top: 65px;
+            left: .5em;
+        }
+        .ol-touch .geolocate {
+            top: 80px;
+        }
+        </style>
+<style>
+.tooltip {
+  position: relative;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+  color: white;
+  padding: 4px 8px;
+  opacity: 0.7;
+  white-space: nowrap;
+}
+.tooltip-measure {
+  opacity: 1;
+  font-weight: bold;
+}
+.tooltip-static {
+  background-color: #ffcc33;
+  color: black;
+  border: 1px solid white;
+}
+.tooltip-measure:before,
+.tooltip-static:before {
+  border-top: 6px solid rgba(0, 0, 0, 0.5);
+  border-right: 6px solid transparent;
+  border-left: 6px solid transparent;
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  margin-left: -7px;
+  left: 50%;
+}
+.tooltip-static:before {
+  border-top-color: #ffcc33;
+}
+.measure-control {
+  top: 100px;
+  left: .5em;
+}
+.ol-touch .measure-control {
+  top: 130px;
+}
+</style>
+        <style>
+        html, body, #map {
+            width: 100%;
+            height: 98.5%;
+            padding: 0;
+            margin: 0;
+        }
+        </style>
+        <title></title>
+    </head>
+    <body>
+        <div id="map">
+            <div id="popup" class="ol-popup">
+                <a href="#" id="popup-closer" class="ol-popup-closer"></a>
+                <div id="popup-content"></div>
+            </div>
+        </div>
+		<form id="form_measure" style="display: none">
+<label>&nbsp;Ukuran:&nbsp;</label>
+<select id="type">
+<option value="length">Panjang</option>	
+<option value="area">Luas</option>
+</select>
+</form>
+
+        <script src="resources/qgis2web_expressions.js"></script>
+        <script src="resources/polyfills.js"></script>
+        <script src="./resources/functions.js"></script>
+        <script src="./resources/ol.js"></script>
+        <script src="./resources/ol-layerswitcher.js"></script>
+        <script src="layers/ANALISISSIMPANGANPOLARUANG_2.js"></script><script src="layers/JangkauanMenujuSDSederajat_3.js"></script><script src="layers/JangkauanMenujuSMPSederajat_4.js"></script><script src="layers/JangkauanMenujuSMASederajat_5.js"></script><script src="layers/JangkauanMenujuPendidikanTinggi_6.js"></script><script src="layers/UsulanPLTMGMasela_7.js"></script><script src="layers/Waterfront_City_9.js"></script><script src="layers/JangkauanMenujuKlinikApotekPraktek_Dokter_10.js"></script><script src="layers/JangkauanMenujuFasilitasKesehatan_11.js"></script><script src="layers/WaktuTempuhMenitMenujuBandara_12.js"></script><script src="layers/SMCA_WP_13.js"></script><script src="layers/kepadatanPenduduk_14.js"></script><script src="layers/HakAtasTanah_15.js"></script><script src="layers/POLARUANG_RTRW_KAB_16.js"></script><script src="layers/POLARUANG_RTRW_PROV_MALUKU_17.js"></script><script src="layers/CekunganAirTanah_18.js"></script><script src="layers/GEOLOGI_LITOLOGI_19.js"></script><script src="layers/BatasDAS_20.js"></script><script src="layers/ProduktivitasAkuifer_21.js"></script><script src="layers/JENISTANAH_22.js"></script><script src="layers/KawasanHutan_23.js"></script><script src="layers/RawanBanjir_24.js"></script><script src="layers/RawanGempaBumi_25.js"></script><script src="layers/RawanLongsor_26.js"></script><script src="layers/RawanTsunami_27.js"></script><script src="layers/Lereng_28.js"></script><script src="layers/Mangrove_29.js"></script><script src="layers/KAWASANKUMUH_30.js"></script><script src="layers/Runoff_31.js"></script><script src="layers/STRUKTUR_GEOLOGI_32.js"></script><script src="layers/PolaRuangSaumalakiLarat_33.js"></script><script src="layers/polaruang_lermatang_34.js"></script><script src="layers/blok_35.js"></script><script src="layers/BATASDESA_36.js"></script><script src="layers/JaringanAirMinum_37.js"></script><script src="layers/InfrastrukturAirMinum_38.js"></script><script src="layers/JaringanAirLimbah_39.js"></script><script src="layers/InfrastrukturAirLimbah_40.js"></script><script src="layers/JaringanDrainase_41.js"></script><script src="layers/JaringanEnergi_42.js"></script><script src="layers/InfrastrukturEnergi_43.js"></script><script src="layers/InfrastrukturPersampahan_44.js"></script><script src="layers/JaringanPrasaranLainnya_45.js"></script><script src="layers/InfrastrukturPrasaranLainnya_46.js"></script><script src="layers/InfrastrukturTelekomunikasi_47.js"></script><script src="layers/JaringanTelekomunikasi_48.js"></script><script src="layers/JaringanTransportasi_49.js"></script><script src="layers/InfrastrukturTransportasi_50.js"></script><script src="layers/PusatPelayanan_51.js"></script><script src="layers/TOPONIMI_52.js"></script>
+        <script src="styles/ANALISISSIMPANGANPOLARUANG_2_style.js"></script><script src="styles/JangkauanMenujuSDSederajat_3_style.js"></script><script src="styles/JangkauanMenujuSMPSederajat_4_style.js"></script><script src="styles/JangkauanMenujuSMASederajat_5_style.js"></script><script src="styles/JangkauanMenujuPendidikanTinggi_6_style.js"></script><script src="styles/UsulanPLTMGMasela_7_style.js"></script><script src="styles/Waterfront_City_9_style.js"></script><script src="styles/JangkauanMenujuKlinikApotekPraktek_Dokter_10_style.js"></script><script src="styles/JangkauanMenujuFasilitasKesehatan_11_style.js"></script><script src="styles/WaktuTempuhMenitMenujuBandara_12_style.js"></script><script src="styles/SMCA_WP_13_style.js"></script><script src="styles/kepadatanPenduduk_14_style.js"></script><script src="styles/HakAtasTanah_15_style.js"></script><script src="styles/POLARUANG_RTRW_KAB_16_style.js"></script><script src="styles/POLARUANG_RTRW_PROV_MALUKU_17_style.js"></script><script src="styles/CekunganAirTanah_18_style.js"></script><script src="styles/GEOLOGI_LITOLOGI_19_style.js"></script><script src="styles/BatasDAS_20_style.js"></script><script src="styles/ProduktivitasAkuifer_21_style.js"></script><script src="styles/JENISTANAH_22_style.js"></script><script src="styles/KawasanHutan_23_style.js"></script><script src="styles/RawanBanjir_24_style.js"></script><script src="styles/RawanGempaBumi_25_style.js"></script><script src="styles/RawanLongsor_26_style.js"></script><script src="styles/RawanTsunami_27_style.js"></script><script src="styles/Lereng_28_style.js"></script><script src="styles/Mangrove_29_style.js"></script><script src="styles/KAWASANKUMUH_30_style.js"></script><script src="styles/Runoff_31_style.js"></script><script src="styles/STRUKTUR_GEOLOGI_32_style.js"></script><script src="styles/PolaRuangSaumalakiLarat_33_style.js"></script><script src="styles/polaruang_lermatang_34_style.js"></script><script src="styles/blok_35_style.js"></script><script src="styles/BATASDESA_36_style.js"></script><script src="styles/JaringanAirMinum_37_style.js"></script><script src="styles/InfrastrukturAirMinum_38_style.js"></script><script src="styles/JaringanAirLimbah_39_style.js"></script><script src="styles/InfrastrukturAirLimbah_40_style.js"></script><script src="styles/JaringanDrainase_41_style.js"></script><script src="styles/JaringanEnergi_42_style.js"></script><script src="styles/InfrastrukturEnergi_43_style.js"></script><script src="styles/InfrastrukturPersampahan_44_style.js"></script><script src="styles/JaringanPrasaranLainnya_45_style.js"></script><script src="styles/InfrastrukturPrasaranLainnya_46_style.js"></script><script src="styles/InfrastrukturTelekomunikasi_47_style.js"></script><script src="styles/JaringanTelekomunikasi_48_style.js"></script><script src="styles/JaringanTransportasi_49_style.js"></script><script src="styles/InfrastrukturTransportasi_50_style.js"></script><script src="styles/PusatPelayanan_51_style.js"></script><script src="styles/TOPONIMI_52_style.js"></script>
+        <script src="./layers/layers.js" type="text/javascript"></script> 
+        <script src="./resources/Autolinker.min.js"></script>
+        <script src="./resources/qgis2web.js"></script>
+    </body>
+</html>
