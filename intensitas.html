@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Luas KDB dan KDH</title>
+</head>
+<body>
+    <h1>Kalkulator Luas KDB maksimum dan KDH minimum </h1>
+    
+    <label for="luasLahan">Masukkan Luas Lahan (m2):</label>
+    <input type="number" id="luasLahan" placeholder="Masukkan luas lahan...">
+    <label for="kriteria">Lokasi Lahan berada pada subzona:</label>
+    <select id="kriteria">
+      <option value="HutanLindung">Hutan Lindung</option>
+	  <option value="PerlindunganSetempat">Perlindungan Setempat</option>
+        <option value="TamanKota">Taman Kota</option>
+		<option value="TamanRW">Taman RW</option>
+		<option value="TamanRT">Taman RT</option>
+        <option value="Pemakaman">Pemakaman</option>
+		<option value="JalurHijau">Jalur Hijau</option>
+	    <option value="EkosistemMangrove">Ekosistem Mangrove</option>
+			
+			
+	<option value="hutanProduksi">Hutan Produksi Yang Dapat Dikonversi</option>
+        <option value="Perkebunan">Perkebunan</option>
+      	<option value="PerikananTangkap">Perikanan Tangkap</option>
+				<option value="PembangkitanTenagaListrik">Pembangkitan Tenaga Listrik</option>
+		
+		
+		<option value="KawasanPeruntukanIndustri">Kawasan Peruntukan Industri</option>
+		
+		<option value="Pariwisata">Pariwisata</option>
+		
+		<option value="PerumahanKepadatanTinggi">Perumahan Kepadatan Tinggi</option>
+		
+		<option value="PerumahanKepadatanSedang">Perumahan Kepadatan Sedang</option>
+		
+		<option value="PerumahanKepadatanRendah">Perumahan Kepadatan Rendah</option>
+		
+		<option value="SPUSkalaKota">SPU Skala Kota</option>
+		<option value="SPUSkalaKecamatan">SPU Skala Kecamatan</option>
+		<option value="SPUSkalaKelurahan">SPU Skala Kelurahan</option>
+		<option value="SPUSkalaRW">SPU Skala RW</option>
+		
+		<option value="CampuranIntensitasMenengah">Campuran Intensitas Menengah</option>
+		
+		<option value="PerdagangandanJasaSkalaKota">Perdagangan dan Jasa Skala Kota</option>
+		<option value="PerdagangandanJasaSkalaWP">Perdagangan dan Jasa Skala WP</option>
+		<option value="Perkantoran">Perkantoran</option>
+		<option value="Transportasi">Transportasi</option>
+		<option value="PertahanandanKeamanan">Pertahanan dan Keamanan</option>
+		
+		
+			
+    </select>
+    <button onclick="hitungLuasKDBKDH()">Hitung Luas KDB dan KDH</button>
+
+    <p id="hasilLuasKDB"></p>
+    <p id="hasilLuasKDH"></p>
+
+    <script>
+        function hitungLuasKDBKDH() {
+            // Mendapatkan nilai luas lahan dari input
+            var luasLahan = parseFloat(document.getElementById('luasLahan').value);
+
+            // Mendapatkan nilai kriteria dari dropdown
+            var kriteria = document.getElementById('kriteria').value;
+
+            // Menghitung luas KDB dan KDH Maksimum berdasarkan kriteria
+            var luasKDBMaksimum = hitungLuasKDBMaksimum(luasLahan, kriteria);
+            var luasKDHMinimal = hitungLuasKDHMinimal(luasLahan, kriteria);
+
+            // Menampilkan hasil luas KDB dan KDH
+            var hasilLuasKDB = document.getElementById('hasilLuasKDB');
+            hasilLuasKDB.innerHTML = 'Luas KDB Maksimum: ' + luasKDBMaksimum.toFixed(2) + ' m²';
+
+            var hasilLuasKDH = document.getElementById('hasilLuasKDH');
+            hasilLuasKDH.innerHTML = 'Luas KDH Minimal: ' + luasKDHMinimal.toFixed(2) + ' m²';
+        }
+
+        function hitungLuasKDBMaksimum(luasLahan, kriteria) {
+            // Menentukan faktor berdasarkan kriteria KDB
+            var faktorKDB = 1;
+            switch (kriteria) {
+                case 'HutanLindung':
+                    faktorKDB = 0.05; // 5%
+                    break;
+				case 'PerlindunganSetempat':
+                    faktorKDB = 0.05; // 5%
+                    break;
+                case 'TamanKota':
+                    faktorKDB = 0.2; // 20%
+                    break;
+				case 'TamanRW':
+                    faktorKDB = 0.2; // 10%
+                    break;
+				case 'TamanRT':
+                    faktorKDB = 0.2; // 10%
+                    break;
+                case 'Pemakaman':
+                    faktorKDB = 0.1; // 10%
+                    break;
+				 case 'JalurHijau':
+                    faktorKDB = 0.1; // 10%
+                    break;
+                case 'EkosistemMangrove':
+                    faktorKDB = 0.05; // 50%
+                    break;
+                
+				
+				case 'hutanProduksi':
+				faktorKDB = 0.1; // 50%
+                    break;
+                case 'Perkebunan':
+				faktorKDB = 0.1; // 50%
+                    break;
+                case 'PerikananTangkap':
+                    faktorKDB = 0.3; // 10%
+                    break;
+				case 'PembangkitanTenagaListrik':
+                    faktorKDB = 0.3; // 10%
+                    break;
+				
+			 case 'KawasanPeruntukanIndustri':
+                    faktorKDB = 0.8; // 10%
+                    break;
+			 case 'Pariwisata':
+                    faktorKDB = 0.4; // 10%
+                    break;
+			 case 'PerumahanKepadatanTinggi':
+                    faktorKDB = 0.8; // 10%
+                    break;
+			 case 'PerumahanKepadatanSedang':
+                    faktorKDB = 0.7; // 10%
+                    break;
+			 case 'PerumahanKepadatanRendah':
+                    faktorKDB = 0.6; // 10%
+                    break;
+			 case 'SPUSkalaKota':
+                    faktorKDB = 0.8; // 10%
+                    break;
+					
+			 case 'SPUSkalaKecamatan':
+                    faktorKDB = 0.6; // 10%
+                    break;
+			 case 'SPUSkalaKelurahan':
+                    faktorKDB = 0.55; // 10%
+                    break;
+			 case 'SPUSkalaRW':
+                    faktorKDB = 0.55; // 10%
+                    break;
+			 case 'CampuranIntensitasMenengah':
+                    faktorKDB = 0.6; // 10%
+                    break;
+			 case 'PerdagangandanJasaSkalaKota':
+                    faktorKDB = 0.8; // 10%
+                    break;
+			 case 'PerdagangandanJasaSkalaWP':
+                    faktorKDB = 0.7; // 10%
+                    break;
+			 case 'Perkantoran':
+                    faktorKDB = 0.7; // 10%
+                    break;
+			 case 'Transportasi':
+                    faktorKDB = 0.7; // 10%
+                    break;
+			 case 'PertahanandanKeamanan':
+                    faktorKDB = 0.5; // 10%
+                    break;
+			
+					
+					
+                // Tambahkan kriteria lain jika diperlukan
+            }
+
+            // Menghitung luas KDB Maksimum
+            var luasKDBMaksimum = luasLahan * faktorKDB;
+
+            return luasKDBMaksimum;
+        }
+
+        function hitungLuasKDHMinimal(luasLahan, kriteria) {
+            // Menentukan faktor berdasarkan kriteria KDH
+            var faktorKDH = 1;
+            switch (kriteria) {
+                
+				case 'HutanLindung':
+                    faktorKDH = 0.95; // 5%
+                    break;
+				case 'PerlindunganSetempat':
+                    faktorKDH = 0.95; // 5%
+                    break;
+                case 'TamanKota':
+                    faktorKDH = 0.7; // 20%
+                    break;
+				case 'TamanRW':
+                    faktorKDH = 0.7; // 10%
+                    break;
+				case 'TamanRT':
+                    faktorKDH = 0.6; // 10%
+                    break;
+                case 'Pemakaman':
+                    faktorKDH = 0.5; // 10%
+                    break;
+				 case 'JalurHijau':
+                    faktorKDH = 0.8; // 10%
+                    break;
+                case 'EkosistemMangrove':
+                    faktorKDH = 0.95; // 50%
+                    break;
+            
+
+
+			case 'hutanProduksi':
+				faktorKDH = 0.8; // 50%
+                    break;
+                case 'Perkebunan':
+				faktorKDH = 0.8; // 50%
+                    break;
+                case 'PerikananTangkap':
+                    faktorKDH = 0.4; // 10%
+                    break;
+				case 'PembangkitanTenagaListrik':
+                    faktorKDH = 0.7; // 10%
+                    break;
+				
+			 case 'KawasanPeruntukanIndustri':
+                    faktorKDH = 0.3; // 10%
+                    break;
+			 case 'Pariwisata':
+                    faktorKDH = 0.6; // 10%
+                    break;
+			 case 'PerumahanKepadatanTinggi':
+                    faktorKDH = 0.2; // 10%
+                    break;
+			 case 'PerumahanKepadatanSedang':
+                    faktorKDH = 0.3; // 10%
+                    break;
+			 case 'PerumahanKepadatanRendah':
+                    faktorKDH = 0.4; // 10%
+                    break;
+			 case 'SPUSkalaKota':
+                    faktorKDH = 0.2; // 10%
+                    break;
+					
+			 case 'SPUSkalaKecamatan':
+                    faktorKDH = 0.2; // 10%
+                    break;
+			 case 'SPUSkalaKelurahan':
+                    faktorKDH = 0.2; // 10%
+                    break;
+			 case 'SPUSkalaRW':
+                    faktorKDH = 0.2; // 10%
+                    break;
+			 case 'CampuranIntensitasMenengah':
+                    faktorKDH = 0.2; // 10%
+                    break;
+			 case 'PerdagangandanJasaSkalaKota':
+                    faktorKDH = 0.2; // 10%
+                    break;
+			 case 'PerdagangandanJasaSkalaWP':
+                    faktorKDH = 0.2; // 10%
+                    break;
+			 case 'Perkantoran':
+                    faktorKDH = 0.2; // 10%
+                    break;
+			 case 'Transportasi':
+                    faktorKDH = 0.3; // 10%
+                    break;
+			 case 'PertahanandanKeamanan':
+                    faktorKDH = 0.4; // 10%
+                    break;
+											
+                // Tambahkan kriteria lain jika diperlukan
+            }
+
+            // Menghitung luas KDH Minimal
+            var luasKDHMinimal = luasLahan * faktorKDH;
+
+            return luasKDHMinimal;
+        }
+    </script>
+</body>
+</html>
