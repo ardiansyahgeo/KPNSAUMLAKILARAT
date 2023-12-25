@@ -29,7 +29,11 @@ body {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
-
+.loading-text {
+    margin-top: 150px;
+    color: #3498db; /* Warna biru */
+	font-family: 'Arial', sans-serif;
+    font-weight: bold;
 .content {
     display: none;
 }
