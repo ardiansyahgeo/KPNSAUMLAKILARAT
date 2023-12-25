@@ -6,5 +6,5 @@ document.addEventListener("DOMContentLoaded", function() {
         
         // Tampilkan konten halaman
         document.querySelector(".content").style.display = "block";
-    }, 3000); // Ganti nilai 3000 dengan waktu loading yang diinginkan dalam milidetik
+    }, 0); // Ganti nilai 3000 dengan waktu loading yang diinginkan dalam milidetik
 });
