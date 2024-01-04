@@ -5,7 +5,7 @@ function categories_PolaRuangSaumalakiLarat_33(feature, value, size, resolution,
                        placement) {
                 switch(value.toString()) {case 'Badan Jalan':
                     return [ new ol.style.Style({
-        fill: new ol.style.Fill({color: 'rgba(235,30,30,0.79)'}),
+        fill: new ol.style.Fill({color: 'rgba(235,30,30,0.6)'}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth)
@@ -13,7 +13,7 @@ function categories_PolaRuangSaumalakiLarat_33(feature, value, size, resolution,
                     break;
 case 'Ekosistem Mangrove':
                     return [ new ol.style.Style({
-        fill: new ol.style.Fill({color: 'rgba(45,150,110,0.79)'}),
+        fill: new ol.style.Fill({color: 'rgba(45,150,110,0.6)'}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth)
@@ -21,7 +21,7 @@ case 'Ekosistem Mangrove':
                     break;
 case 'Hutan Lindung':
                     return [ new ol.style.Style({
-        fill: new ol.style.Fill({color: 'rgba(50,95,40,0.79)'}),
+        fill: new ol.style.Fill({color: 'rgba(50,95,40,0.6)'}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth)
@@ -29,7 +29,7 @@ case 'Hutan Lindung':
                     break;
 case 'Taman Kota':
                     return [ new ol.style.Style({
-        fill: new ol.style.Fill({color: 'rgba(65,105,0,0.79)'}),
+        fill: new ol.style.Fill({color: 'rgba(65,105,0,0.6)'}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth)
@@ -37,7 +37,7 @@ case 'Taman Kota':
                     break;
 case 'Taman Kecamatan':
                     return [ new ol.style.Style({
-        fill: new ol.style.Fill({color: 'rgba(70,135,0,0.79)'}),
+        fill: new ol.style.Fill({color: 'rgba(70,135,0,0.6)'}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth)
@@ -45,7 +45,7 @@ case 'Taman Kecamatan':
                     break;
 case 'Taman Kelurahan':
                     return [ new ol.style.Style({
-        fill: new ol.style.Fill({color: 'rgba(75,165,0,0.79)'}),
+        fill: new ol.style.Fill({color: 'rgba(75,165,0,0.6)'}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth)
@@ -53,7 +53,7 @@ case 'Taman Kelurahan':
                     break;
 case 'Hutan Produksi yang dapat Dikonversi':
                     return [ new ol.style.Style({
-        fill: new ol.style.Fill({color: 'rgba(155,225,55,0.79)'}),
+        fill: new ol.style.Fill({color: 'rgba(155,225,55,0.6)'}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth)
@@ -61,7 +61,7 @@ case 'Hutan Produksi yang dapat Dikonversi':
                     break;
 case 'Taman RT':
                     return [ new ol.style.Style({
-        fill: new ol.style.Fill({color: 'rgba(85,225,0,0.79)'}),
+        fill: new ol.style.Fill({color: 'rgba(85,225,0,0.6)'}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth)
@@ -69,7 +69,7 @@ case 'Taman RT':
                     break;
 case 'Pemakaman':
                     return [ new ol.style.Style({
-        fill: new ol.style.Fill({color: 'rgba(90,255,0,0.79)'}),
+        fill: new ol.style.Fill({color: 'rgba(90,255,0,0.6)'}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth)
@@ -77,7 +77,7 @@ case 'Pemakaman':
                     break;
 case 'Jalur Hijau':
                     return [ new ol.style.Style({
-        fill: new ol.style.Fill({color: 'rgba(15,245,0,0.79)'}),
+        fill: new ol.style.Fill({color: 'rgba(15,245,0,0.6)'}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth)
@@ -85,7 +85,7 @@ case 'Jalur Hijau':
                     break;
 case 'Kawasan Peruntukan Industri':
                     return [ new ol.style.Style({
-        fill: new ol.style.Fill({color: 'rgba(105,0,0,0.79)'}),
+        fill: new ol.style.Fill({color: 'rgba(105,0,0,0.6)'}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth)
@@ -93,7 +93,7 @@ case 'Kawasan Peruntukan Industri':
                     break;
 case 'Pariwisata':
                     return [ new ol.style.Style({
-        fill: new ol.style.Fill({color: 'rgba(255,165,255,0.79)'}),
+        fill: new ol.style.Fill({color: 'rgba(255,165,255,0.6)'}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth)
@@ -101,7 +101,7 @@ case 'Pariwisata':
                     break;
 case 'Pembangkitan Tenaga Listrik':
                     return [ new ol.style.Style({
-        fill: new ol.style.Fill({color: 'rgba(0,255,205,0.79)'}),
+        fill: new ol.style.Fill({color: 'rgba(0,255,205,0.6)'}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth)
@@ -109,7 +109,7 @@ case 'Pembangkitan Tenaga Listrik':
                     break;
 case 'Perdagangan dan Jasa Skala Kota':
                     return [ new ol.style.Style({
-        fill: new ol.style.Fill({color: 'rgba(255,100,100,0.79)'}),
+        fill: new ol.style.Fill({color: 'rgba(255,100,100,0.6)'}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth)
@@ -117,7 +117,7 @@ case 'Perdagangan dan Jasa Skala Kota':
                     break;
 case 'Perdagangan dan Jasa Skala WP':
                     return [ new ol.style.Style({
-        fill: new ol.style.Fill({color: 'rgba(255,130,130,0.79)'}),
+        fill: new ol.style.Fill({color: 'rgba(255,130,130,0.6)'}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth)
@@ -125,7 +125,7 @@ case 'Perdagangan dan Jasa Skala WP':
                     break;
 case 'Perdagangan dan Jasa Skala SWP':
                     return [ new ol.style.Style({
-        fill: new ol.style.Fill({color: 'rgba(255,165,165,0.79)'}),
+        fill: new ol.style.Fill({color: 'rgba(255,165,165,0.6)'}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth)
@@ -133,7 +133,7 @@ case 'Perdagangan dan Jasa Skala SWP':
                     break;
 case 'Campuran Intensitas Menengah/Sedang':
                     return [ new ol.style.Style({
-        fill: new ol.style.Fill({color: 'rgba(240,115,30,0.79)'}),
+        fill: new ol.style.Fill({color: 'rgba(240,115,30,0.6)'}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth)
@@ -141,7 +141,7 @@ case 'Campuran Intensitas Menengah/Sedang':
                     break;
 case 'Perkantoran':
                     return [ new ol.style.Style({
-        fill: new ol.style.Fill({color: 'rgba(155,155,155,0.79)'}),
+        fill: new ol.style.Fill({color: 'rgba(155,155,155,0.6)'}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth)
@@ -149,7 +149,7 @@ case 'Perkantoran':
                     break;
 case 'Perkebunan':
                     return [ new ol.style.Style({
-        fill: new ol.style.Fill({color: 'rgba(175,175,55,0.79)'}),
+        fill: new ol.style.Fill({color: 'rgba(175,175,55,0.6)'}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth)
@@ -157,7 +157,7 @@ case 'Perkebunan':
                     break;
 case 'Pertahanan dan Keamanan':
                     return [ new ol.style.Style({
-        fill: new ol.style.Fill({color: 'rgba(155,0,255,0.79)'}),
+        fill: new ol.style.Fill({color: 'rgba(155,0,255,0.6)'}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth)
@@ -165,7 +165,7 @@ case 'Pertahanan dan Keamanan':
                     break;
 case 'Perumahan Kepadatan Sangat Rendah':
                     return [ new ol.style.Style({
-        fill: new ol.style.Fill({color: 'rgba(255,255,155,0.79)'}),
+        fill: new ol.style.Fill({color: 'rgba(255,255,155,0.6)'}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth)
@@ -173,7 +173,7 @@ case 'Perumahan Kepadatan Sangat Rendah':
                     break;
 case 'Perumahan Kepadatan Rendah':
                     return [ new ol.style.Style({
-        fill: new ol.style.Fill({color: 'rgba(255,250,75,0.79)'}),
+        fill: new ol.style.Fill({color: 'rgba(255,250,75,0.6)'}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth)
@@ -181,7 +181,7 @@ case 'Perumahan Kepadatan Rendah':
                     break;
 case 'Perumahan Kepadatan Sedang':
                     return [ new ol.style.Style({
-        fill: new ol.style.Fill({color: 'rgba(255,240,5,0.79)'}),
+        fill: new ol.style.Fill({color: 'rgba(255,240,5,0.6)'}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth)
@@ -189,7 +189,7 @@ case 'Perumahan Kepadatan Sedang':
                     break;
 case 'Perumahan Kepadatan Tinggi':
                     return [ new ol.style.Style({
-        fill: new ol.style.Fill({color: 'rgba(255,220,0,0.79)'}),
+        fill: new ol.style.Fill({color: 'rgba(255,220,0,0.6)'}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth)
@@ -197,7 +197,7 @@ case 'Perumahan Kepadatan Tinggi':
                     break;
 case 'SPU Skala Kota':
                     return [ new ol.style.Style({
-        fill: new ol.style.Fill({color: 'rgba(125,25,125,0.79)'}),
+        fill: new ol.style.Fill({color: 'rgba(125,25,125,0.6)'}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth)
@@ -205,7 +205,7 @@ case 'SPU Skala Kota':
                     break;
 case 'SPU Skala Kecamatan':
                     return [ new ol.style.Style({
-        fill: new ol.style.Fill({color: 'rgba(155,50,155,0.79)'}),
+        fill: new ol.style.Fill({color: 'rgba(155,50,155,0.6)'}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth)
@@ -213,7 +213,7 @@ case 'SPU Skala Kecamatan':
                     break;
 case 'SPU Skala Kelurahan':
                     return [ new ol.style.Style({
-        fill: new ol.style.Fill({color: 'rgba(185,75,185,0.79)'}),
+        fill: new ol.style.Fill({color: 'rgba(185,75,185,0.6)'}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth)
@@ -221,7 +221,7 @@ case 'SPU Skala Kelurahan':
                     break;
 case 'SPU Skala RW':
                     return [ new ol.style.Style({
-        fill: new ol.style.Fill({color: 'rgba(215,100,215,0.79)'}),
+        fill: new ol.style.Fill({color: 'rgba(215,100,215,0.6)'}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth)
@@ -229,7 +229,7 @@ case 'SPU Skala RW':
                     break;
 case 'Transportasi':
                     return [ new ol.style.Style({
-        fill: new ol.style.Fill({color: 'rgba(215,55,0,0.79)'}),
+        fill: new ol.style.Fill({color: 'rgba(215,55,0,0.6)'}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth)
@@ -237,7 +237,7 @@ case 'Transportasi':
                     break;
 case 'Perlindungan Setempat':
                     return [ new ol.style.Style({
-        fill: new ol.style.Fill({color: 'rgba(5,215,215,0.79)'}),
+        fill: new ol.style.Fill({color: 'rgba(5,215,215,0.6)'}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth)
@@ -245,7 +245,7 @@ case 'Perlindungan Setempat':
                     break;
 case 'Perikanan Tangkap':
                     return [ new ol.style.Style({
-        fill: new ol.style.Fill({color: 'rgba(100,155,210,0.79)'}),
+        fill: new ol.style.Fill({color: 'rgba(100,155,210,0.6)'}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth)
@@ -253,7 +253,7 @@ case 'Perikanan Tangkap':
                     break;
 case 'Rimba Kota':
                     return [ new ol.style.Style({
-        fill: new ol.style.Fill({color: 'rgba(55,85,10,0.79)'}),
+        fill: new ol.style.Fill({color: 'rgba(55,85,10,0.6)'}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth)
